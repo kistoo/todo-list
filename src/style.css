@@ -53,3 +53,103 @@ table {
 *::after {
   box-sizing: border-box;
 }
+
+/*style*/
+
+:root {
+    --primary-color: #1e293b;
+    --primary-light-1: #94a3b8;
+    --primary-light-2: #475569;
+    --background-color: #cbd5e1;
+    --font-color: #0f172a;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--primary-color);
+    justify-content: space-between;
+    padding: 2vh 2vw;
+}
+
+#header h1 {
+    font-size: 3vh;
+    color: var(--background-color);
+    
+}
+
+.logo {
+
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+    margin-right: 3vw;
+}
+
+h1 {
+    font-weight: 800;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-light-1);
+    gap: 1vh;
+    padding: 4vh 1vw;
+}
+
+.category {
+    padding: 1.5vh;
+    background-color: var(--primary-light-2);
+    color: var(--background-color);
+    font-size: 2vh;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    padding: 5vh;
+    background-color: var(--background-color);
+}
+
+#content h1 {
+    margin-bottom: 1vh;
+    font-size: 10vh;
+    color: var(--primary-color);
+}
+
+h3 {
+    font-size: 3.5vh;
+    margin: 2vh 0;
+    color: var(--font-color);
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    color: var(--font-color);
+}
+
+li {
+    font-size: 2.5vh;
+}
