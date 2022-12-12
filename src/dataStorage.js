@@ -13,8 +13,13 @@ const dataStorage = (() => {
 
         let names = [categoriesFactory("Today"),categoriesFactory("Odin projects"),categoriesFactory("Social"),categoriesFactory("Debts")];
         
-        const getCategory = function() {
+        const getCategories = function() {
             return names;
+        }
+
+        const getCategory = function(name) {
+            const index = getIndex(name,array);
+            return names[index];
         }
 
         const addCategory = function(name) {
@@ -65,8 +70,9 @@ const dataStorage = (() => {
         }
 
         return {
-            addCategory,
+            getCategories,
             getCategory,
+            addCategory,
             removeCategory
         }
 
