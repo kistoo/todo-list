@@ -18,7 +18,7 @@ const dataStorage = (() => {
         }
 
         const getCategory = function(name) {
-            const index = getIndex(name,array);
+            const index = getIndex(name,names);
             return names[index];
         }
 
