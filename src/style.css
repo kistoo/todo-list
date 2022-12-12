@@ -78,17 +78,25 @@ body {
     align-items: center;
     background-color: var(--primary-color);
     justify-content: space-between;
-    padding: 2vh 2vw;
+    padding: 1vh 2vw;
 }
 
 #header h1 {
-    font-size: 3vh;
+    font-size: 4vh;
     color: var(--background-color);
     
 }
 
 .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+}
 
+.logo img {
+    height: 8vh;
+    filter: invert(93%) sepia(15%) saturate(462%) hue-rotate(181deg) brightness(91%) contrast(93%);
 }
 
 .menu {
@@ -188,7 +196,5 @@ ul {
 
 li {
     font-size: 2.5vh;
-    list-style:disc;
-    margin-left: 2vw;
     color: var(--font-color);
 }
