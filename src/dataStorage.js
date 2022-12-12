@@ -28,9 +28,6 @@ const dataStorage = (() => {
 
         const removeCategory = function(category) {
             names.splice(getIndex(category,names),1);
-            addTodo("Today","cook","nothing","tomorrow","!!!",false)
-            removeTodo("Today","cook");
-            console.log(names)
         }
 
         //gets index of object.name in names
@@ -73,7 +70,9 @@ const dataStorage = (() => {
             getCategories,
             getCategory,
             addCategory,
-            removeCategory
+            removeCategory,
+            addTodo,
+            removeTodo
         }
 
     })();
