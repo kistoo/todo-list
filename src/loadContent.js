@@ -98,9 +98,19 @@ function loadContent(category = dataStorage.categories.getCategory("Today")) {
 
     //category = today
     if (category.name === "Today") {
+        const firstrow = document.createElement('div');
         const greeting = document.createElement('h1');
         greeting.textContent = "Good Morning!";
-        content.appendChild(greeting);
+        firstrow.appendChild(greeting);
+        const settings = document.createElement('div');
+        const add = new Image();
+        add.src = plus;
+        settings.appendChild(add);
+        const remove = new Image();
+        remove.src = trash;
+        settings.appendChild(remove);
+        firstrow.appendChild(settings);
+        content.appendChild(firstrow);
 
         const text = document.createElement('h3');
         //verifies if theres a todo
@@ -108,16 +118,26 @@ function loadContent(category = dataStorage.categories.getCategory("Today")) {
             text.textContent = "Today you are free! There is nothing to do :D";
             content.appendChild(text);
         } else {
-            text.textContent = "Today, you have this thing to do:";
+            text.textContent = "Today, you have this things to do:";
             content.appendChild(text);
             content.appendChild(list);
         }
 
     } else { //category = another category
+        const firstrow = document.createElement('div');
         const categoryName = document.createElement('h1');
         categoryName.textContent = category.name;
-        content.appendChild(categoryName);
-
+        firstrow.appendChild(categoryName);
+        const settings = document.createElement('div');
+        const add = new Image();
+        add.src = plus;
+        settings.appendChild(add);
+        const remove = new Image();
+        remove.src = trash;
+        settings.appendChild(remove);
+        firstrow.appendChild(settings);
+        content.appendChild(firstrow);
+        
         if (hasTodos === false) {
             const text = document.createElement('h3');
             text.textContent = 'There is nothing to do here, add activities with the "+" button';

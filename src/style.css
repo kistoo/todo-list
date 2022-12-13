@@ -175,6 +175,27 @@ h1 {
     background: var(--font-color); 
 }
 
+#content>div:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#content>div:first-child img {
+    height: 7vh;
+    filter: invert(11%) sepia(18%) saturate(1663%) hue-rotate(178deg) brightness(92%) contrast(87%);
+}
+
+#content>div:first-child img:first-child:hover {
+    filter: invert(90%) sepia(1%) saturate(243%) hue-rotate(189deg) brightness(110%) contrast(94%);
+}
+
+#content>div:first-child img:last-child:hover {
+    filter: invert(14%) sepia(64%) saturate(4328%) hue-rotate(354deg) brightness(86%) contrast(86%);
+}
+
+
 #content h1 {
     margin-bottom: 1vh;
     font-size: 10vh;
