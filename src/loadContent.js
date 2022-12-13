@@ -1,5 +1,4 @@
 import { dataStorage } from "./dataStorage";
-import edit from './images/pencil.svg';
 import trash from './images/delete.svg';
 import plus from './images/plus.svg';
 
@@ -56,9 +55,6 @@ function loadContent(category = dataStorage.categories.getCategory("Today")) {
         const date = document.createElement('h2');
         date.textContent = todo.dueDate;
         right.appendChild(date);
-        const editIcon = new Image();
-        editIcon.src = edit;
-        right.appendChild(editIcon);
         const deleteIcon = new Image();
         deleteIcon.src = trash;
         right.appendChild(deleteIcon);
