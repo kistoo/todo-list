@@ -43,18 +43,17 @@ const dataStorage = (() => {
 
         //todos
 
-        const todosFactory = (category,name,description,dueDate,priority) => {
+        const todosFactory = (category,name,dueDate,priority) => {
             return {
                 category,
                 name,
-                description,
                 dueDate,
                 priority
             };
         }
 
-        const addTodo = function(category,name,description,dueDate,priority) {
-            const newTodo = todosFactory(category,name,description,dueDate,priority);
+        const addTodo = function(category,name,dueDate,priority) {
+            const newTodo = todosFactory(category,name,dueDate,priority);
             names[getIndex(category,names)].todos.push(newTodo);
         }
 
