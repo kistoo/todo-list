@@ -198,3 +198,87 @@ li {
     font-size: 2.5vh;
     color: var(--font-color);
 }
+
+/*todo div*/
+
+.todo {
+    display: flex;
+    flex-direction: row;
+    background-color: #94a3b8;
+    border-radius: 15px;
+    align-items: center;
+    margin: 0.5vh 0;
+}
+
+.todo div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+}
+
+.right {
+    margin-left: auto;
+    margin-right: 2vw;
+}
+
+.left {
+    margin-right: auto;
+}
+
+.todo img {
+    height: 4vh;
+    filter: invert(11%) sepia(18%) saturate(1663%) hue-rotate(178deg) brightness(92%) contrast(87%);
+}
+
+.todo img:first-of-type:hover {
+    filter: invert(90%) sepia(1%) saturate(243%) hue-rotate(189deg) brightness(110%) contrast(94%);
+}
+
+.todo img:last-of-type:hover {
+    filter: invert(14%) sepia(64%) saturate(4328%) hue-rotate(354deg) brightness(86%) contrast(86%);
+}
+
+.todo h2 {
+    font-size: 3vh;
+}
+
+.importance {
+    width: 1vw;
+    height: 6vh;
+    border-radius: 15px 0 0 15px;
+}
+
+.one {
+    background-color: #0e7490;
+}
+
+.two {
+    background-color: #15803d;
+}
+
+.three {
+    background-color: #a16207;
+}
+
+.four {
+    background-color: #c2410c;
+}
+
+.five {
+    background-color: #b91c1c;
+}
+
+.done {
+    background-color: #3f3f46;
+}
+
+.todo input {
+    width: 25px;
+    height: 25px;
+    box-shadow: 0 0 0 1px var(--background-color);
+}
+
+.todo input:focus {
+    box-shadow: 0 0 0 1px var(--background-color);
+}
