@@ -23,7 +23,8 @@ const dataStorage = (() => {
         }
 
         const addCategory = function(name) {
-            names.push(name);
+            const newCategory = categoriesFactory(name);
+            names.push(newCategory);
         }
 
         const removeCategory = function(category) {
