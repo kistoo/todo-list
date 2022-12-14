@@ -3,6 +3,7 @@ import trash from './images/delete.svg';
 import plus from './images/plus.svg';
 import { compareAsc, format } from 'date-fns';
 import { loadSidebar } from './loadSidebar';
+import { loadModal } from './loadModal';
 
 function loadContent(category = dataStorage.categories.getCategory('Today')) {
   //empties actual content
@@ -122,6 +123,10 @@ function loadContent(category = dataStorage.categories.getCategory('Today')) {
   const add = new Image();
   add.src = plus;
   settings.appendChild(add);
+  //add todo
+  add.addEventListener('click', () => {
+    loadModal(category);
+  })
   const remove = new Image();
   remove.src = trash;
   settings.appendChild(remove);
