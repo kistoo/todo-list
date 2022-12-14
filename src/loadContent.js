@@ -79,6 +79,11 @@ function loadContent(category = dataStorage.categories.getCategory('Today')) {
     deleteIcon.src = trash;
     right.appendChild(deleteIcon);
     tododiv.appendChild(right);
+    //deletes todo
+    deleteIcon.addEventListener('click', () => {
+        dataStorage.categories.removeTodo(category.name, todo.name);
+        loadContent(category);
+    })
     //orders by priority
     if (todo.priority.includes('done') === true) {
       importance0.appendChild(tododiv);
