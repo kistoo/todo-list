@@ -138,6 +138,17 @@ h1 {
     color: white;
 }
 
+#sidebar input {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    padding: 1.5vh;
+    font-size: 2vh;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+}
+
 .add {
     display: flex;
     flex-direction: row-reverse;
