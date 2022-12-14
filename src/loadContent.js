@@ -2,6 +2,7 @@ import { dataStorage } from './dataStorage';
 import trash from './images/delete.svg';
 import plus from './images/plus.svg';
 import { compareAsc, format } from 'date-fns';
+import { loadSidebar } from './loadSidebar';
 
 function loadContent(category = dataStorage.categories.getCategory('Today')) {
   //empties actual content
@@ -113,21 +114,28 @@ function loadContent(category = dataStorage.categories.getCategory('Today')) {
   list.appendChild(importance2);
   list.appendChild(importance1);
   list.appendChild(importance0);
+  //loads content
+  const firstrow = document.createElement('div');
+  const categoryName = document.createElement('h1');
+  firstrow.appendChild(categoryName);
+  const settings = document.createElement('div');
+  const add = new Image();
+  add.src = plus;
+  settings.appendChild(add);
+  const remove = new Image();
+  remove.src = trash;
+  settings.appendChild(remove);
+  content.appendChild(firstrow);
+  //deletes category
+  remove.addEventListener('click', () => {
+    dataStorage.categories.removeCategory(category.name);
+    loadContent();
+    loadSidebar();
+  })
+
   //category = today
   if (category.name === 'Today') {
-    const firstrow = document.createElement('div');
-    const greeting = document.createElement('h1');
-    greeting.textContent = 'Good Morning!';
-    firstrow.appendChild(greeting);
-    const settings = document.createElement('div');
-    const add = new Image();
-    add.src = plus;
-    settings.appendChild(add);
-    const remove = new Image();
-    remove.src = trash;
-    settings.appendChild(remove);
-    firstrow.appendChild(settings);
-    content.appendChild(firstrow);
+    categoryName.textContent = 'Good Morning!';
     const text = document.createElement('h3');
     //verifies if theres a todo
     if (hasTodos === false) {
@@ -139,19 +147,8 @@ function loadContent(category = dataStorage.categories.getCategory('Today')) {
       content.appendChild(list);
     }
   } else { //category = another category
-    const firstrow = document.createElement('div');
-    const categoryName = document.createElement('h1');
     categoryName.textContent = category.name;
-    firstrow.appendChild(categoryName);
-    const settings = document.createElement('div');
-    const add = new Image();
-    add.src = plus;
-    settings.appendChild(add);
-    const remove = new Image();
-    remove.src = trash;
-    settings.appendChild(remove);
     firstrow.appendChild(settings);
-    content.appendChild(firstrow);
     //initial message  
     if (hasTodos === false) {
       const text = document.createElement('h3');
