@@ -51,7 +51,6 @@ const dataStorage = (() => {
   const removeTodo = function(category, name) {
     const todoCategory = names[getIndex(category,names)];
     const todos = todoCategory.todos;
-    const todo = todos[getIndex(name,todos)];
     todos.splice(getIndex(name,todos))
   }
 
