@@ -19,8 +19,10 @@ function loadContent(category = dataStorage.categories.getCategory("Today")) {
     let hasTodos = false;
     //imports todos
     category.todos.forEach((todo) => {
-        hasTodos = true;
-
+        //checks there are todos not done
+        if (todo.priority.includes("done") === false) {
+            hasTodos = true;
+        }
         const tododiv = document.createElement('div');
         tododiv.className = "todo";
 
@@ -136,8 +138,18 @@ function loadContent(category = dataStorage.categories.getCategory("Today")) {
         
         if (hasTodos === false) {
             const text = document.createElement('h3');
-            text.textContent = 'There is nothing to do here, add activities with the "+" button';
-            content.appendChild(text);
+            if (category.todos.length === 0) {
+                text.textContent = 'There is nothing to do here, add activities with the "+" button';
+                content.appendChild(text);
+            } else {
+                text.textContent = 'This todos are already done, if you want to clear them all, click on this message.'
+                content.appendChild(text);
+                content.appendChild(list);
+                text.addEventListener('click', () => {
+                    category.todos = [];
+                    loadContent(category);
+                })
+            }
         } else {
             content.appendChild(list);
         }
