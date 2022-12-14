@@ -1,6 +1,7 @@
 import { dataStorage } from "./dataStorage";
 import trash from './images/delete.svg';
 import plus from './images/plus.svg';
+import { compareAsc, format } from 'date-fns';
 
 function loadContent(category = dataStorage.categories.getCategory("Today")) {
     //empties actual content
@@ -53,10 +54,26 @@ function loadContent(category = dataStorage.categories.getCategory("Today")) {
 
         const right = document.createElement('div');
         right.className = "right";
-        //replace later with actual date 
-        const date = document.createElement('h2');
-        date.textContent = todo.dueDate;
+        const textDate = document.createElement('h2');
+        textDate.textContent = todo.dueDate;
+        const date = document.createElement('input');
+        date.type = "date";
+        date.value = todo.dueDate;
+        date.style.display = "none";
+        textDate.addEventListener('click', () => {
+            right.removeChild(textDate);
+            date.style.display = "block";
+            date.focus();
+            date.addEventListener('change', () => {
+                todo.dueDate = date.value;
+                right.appendChild(date);
+            })  
+            date.addEventListener('blur', () => {
+                loadContent(category);
+            })
+        })
         right.appendChild(date);
+        right.appendChild(textDate);
         const deleteIcon = new Image();
         deleteIcon.src = trash;
         right.appendChild(deleteIcon);

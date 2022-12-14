@@ -302,6 +302,11 @@ ul>div {
     font-size: 3vh;
 }
 
+.right input {
+    min-width: 8vw;
+    font-size: 2vh;
+}
+
 .importance {
     width: 1vw;
     height: 6vh;
@@ -332,12 +337,12 @@ ul>div {
     background-color: #3f3f46;
 }
 
-.todo input {
+.todo input:first-of-type {
     width: 25px;
     height: 25px;
     box-shadow: 0 0 0 1px var(--background-color);
 }
 
-.todo input:focus {
+.todo input:first-of-type:focus {
     box-shadow: 0 0 0 1px var(--background-color);
 }
