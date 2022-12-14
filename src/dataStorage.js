@@ -10,7 +10,7 @@ const dataStorage = (() => {
       todos
     }
   }
-  let names = [categoriesFactory('Today'),categoriesFactory('Odin projects'),categoriesFactory('Social'),categoriesFactory('Debts')];
+  let names = [categoriesFactory('Today')];
   const getCategories = function() {
     return names;
   }
