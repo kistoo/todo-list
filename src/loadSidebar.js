@@ -37,7 +37,9 @@ function loadSidebar(selected = 'Today') {
     input.focus();
     input.addEventListener('keydown', (key) => {
       if (key.key === 'Enter' && input.value !== '') {
-        dataStorage.categories.addCategory(input.value);
+        if (dataStorage.categories.getCategory(input.value) === undefined) {
+          dataStorage.categories.addCategory(input.value);
+        }
         loadSidebar();
       } else if (key.key === 'Escape') {
         loadSidebar();
