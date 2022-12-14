@@ -8,6 +8,8 @@ function loadContent(category = dataStorage.categories.getCategory('Today')) {
   //empties actual content
   const content = document.getElementById('content');
   content.innerHTML = '';
+  //updates today todos
+  dataStorage.categories.updateTodayTodos();
   //sorts by importance
   const list = document.createElement('ul');
   list.className = 'todos';

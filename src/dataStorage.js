@@ -1,3 +1,5 @@
+import { lightFormat, startOfToday } from "date-fns";
+
 const dataStorage = (() => {
   //admins categories
   const categories = (() => {
@@ -13,7 +15,7 @@ const dataStorage = (() => {
     return names;
   }
   const getCategory = function(name) {
-    const index = getIndex(name,names);
+    const index = getIndex(name,names); 
     return names[index];
   }
   const addCategory = function(name) {
@@ -53,6 +55,18 @@ const dataStorage = (() => {
     const todos = todoCategory.todos;
     todos.splice(getIndex(name,todos))
   }
+  const updateTodayTodos = function() {
+    names[0].todos = [];
+    names.forEach((category) => {
+      if (category.name !== 'Today') {
+        category.todos.forEach((todo) => {
+          if (lightFormat(new Date(startOfToday()), 'yyyy-MM-dd') === todo.dueDate) {
+            names[0].todos.push(todo);
+          }
+        });
+      }
+    });
+  }
 
   return {
     getCategories,
@@ -60,7 +74,8 @@ const dataStorage = (() => {
     addCategory,
     removeCategory,
     addTodo,
-    removeTodo
+    removeTodo,
+    updateTodayTodos
   }
   })();
     
