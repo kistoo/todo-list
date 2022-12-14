@@ -1,7 +1,6 @@
 import { dataStorage } from './dataStorage';
 import trash from './images/delete.svg';
 import plus from './images/plus.svg';
-import { compareAsc, format } from 'date-fns';
 import { loadSidebar } from './loadSidebar';
 import { loadModal } from './loadModal';
 

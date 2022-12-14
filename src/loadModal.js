@@ -1,5 +1,4 @@
 import { startOfToday, lightFormat } from 'date-fns';
-import { ca } from 'date-fns/locale';
 import { dataStorage } from './dataStorage';
 import { loadContent } from './loadContent';
 
