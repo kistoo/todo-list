@@ -37,7 +37,7 @@ function loadModal(category) {
   const dateInput = document.createElement('input');
   dateInput.id = 'date';
   dateInput.type = 'date';
-  dateInput.defaultValue = lightFormat(new Date(startOfToday()), 'yyyy-MM-dd')
+  dateInput.defaultValue = lightFormat(new Date(startOfToday()), 'yyyy-MM-dd');
   modal.appendChild(dateInput);
   const priorityLabel = document.createElement('label');
   priorityLabel.for = 'priority';
