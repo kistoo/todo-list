@@ -115,8 +115,9 @@ const dataStorage = (() => {
     const callData = function() {
       if (storageAvailable('localStorage')) {
         const localList = JSON.parse(localStorage.getItem('todoList'));
-        categories.loadCategories(localList);
-        console.log("hurrah");
+        if (localList != null) {
+          categories.loadCategories(localList);
+        }
       }
     }
     return {
