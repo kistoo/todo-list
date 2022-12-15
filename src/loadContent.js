@@ -5,6 +5,7 @@ import { loadSidebar } from './loadSidebar';
 import { loadModal } from './loadModal';
 
 function loadContent(category = dataStorage.categories.getCategory('Today')) {
+  dataStorage.local.setData();
   //empties actual content
   const content = document.getElementById('content');
   content.innerHTML = '';

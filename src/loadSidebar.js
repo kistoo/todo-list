@@ -3,6 +3,7 @@ import { loadContent } from './loadContent';
 import plus from './images/plus.svg';
 
 function loadSidebar(selected = 'Today') {
+  dataStorage.local.setData();
   const sidebar = document.getElementById('sidebar');
   sidebar.innerHTML = '';
   //gets array with categories
