@@ -135,6 +135,9 @@ h1 {
 
 .category:hover, .selected {
     background-color: var(--primary-color);
+}
+
+.selected {
     color: white;
 }
 
